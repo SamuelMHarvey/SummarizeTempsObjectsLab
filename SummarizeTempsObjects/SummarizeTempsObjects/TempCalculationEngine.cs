@@ -16,31 +16,58 @@ namespace SummarizeTempsObjects
         public int AverageTemperature()
         {
             // add logic to calculate the average
-            int total;
+            int totalTemp = 0;
 
             foreach (int temp in _temperatures)
             {
-                total = total + temp;
+                totalTemp += temp;
             }
-            return total/_temperatures.Count; // <-- Replace this with the actual average
+            return totalTemp/_temperatures.Count; // <-- Replace this with the actual average
         }
 
         public int TempsAboveThreshold(int threshold)
         {
             // add logic to calculate temps above the threshold
-            return 0; // <-- Replace this with the number
+            int tempsAbove = 0;
+
+            foreach (int temp in _temperatures)
+            {
+                if (temp > threshold)
+                {
+                    tempsAbove++;
+                }
+            }
+            return tempsAbove; // <-- Replace this with the number
         }
 
         public int TempsBelowThreshold(int threshold)
         {
             // add logic to calculate and return temps below the threshold
-            return 0; // <-- Replace this with the number
+            int tempsBelow = 0;
+
+            foreach (int temp in _temperatures)
+            {
+                if (temp < threshold)
+                {
+                    tempsBelow++;
+                }
+            }
+            return tempsBelow; // <-- Replace this with the number
         }
 
         public int TempsAtThreshold(int threshold)
         {
             // add logic to calculate and return temps at the threshold
-            return 0; // <-- Replace this with the number
+            int tempsAt = 0;
+
+            foreach (int temp in _temperatures)
+            {
+                if (temp == threshold)
+                {
+                    tempsAt++;
+                }
+            }
+            return tempsAt; // <-- Replace this with the number
         }
 
         public int NumberOfTemperatures()
